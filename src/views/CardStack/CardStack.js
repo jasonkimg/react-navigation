@@ -1,6 +1,11 @@
 import React from 'react';
 
-import clamp from 'clamp';
+// import clamp from 'clamp';
+var clamp = function (value, min, max) {
+  return min < max
+      ? (value < min ? min : value > max ? max : value)
+      : (value < max ? max : value > min ? min : value)
+}
 import {
   Animated,
   StyleSheet,
